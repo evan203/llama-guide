@@ -1,0 +1,34 @@
+model_list:
+  - model_name: llama-cluster
+    litellm_params:
+      model: openai/llama3
+      api_base: http://ethans-macbook-air:8080/v1
+      api_key: "not-needed"
+
+  - model_name: llama-cluster
+    litellm_params:
+      model: openai/llama3
+      api_base: http://arvind:8080/v1
+      api_key: "not-needed"
+
+  - model_name: llama-cluster
+    litellm_params:
+      model: openai/llama3
+      api_base: http://desktop-d5iat51:8080/v1
+      api_key: "not-needed"
+
+  - model_name: llama-cluster
+    litellm_params:
+      model: openai/llama3
+      api_base: http://desktop-ekjmg91:8080/v1
+      api_key: "not-needed"
+
+router_settings:
+  # Choose how parallel requests are distributed:
+  routing_strategy: "least-busy"
+  # Alternatives:
+  # - "simple-shuffle": Randomly distributes incoming parallel traffic.
+  # - "least-busy": Sends the parallel request to the node currently handling the fewest active requests.
+
+litellm_settings:
+  drop_params: true
